@@ -1,0 +1,23 @@
+= link_to span_tag('Create Slide'), new_admin_slide_path, :class => 'big button'
+%h1 Slides
+
+= will_paginate @slides
+
+%table.formatted
+  %tr
+    %th.main Title
+    %th Link
+    %th Image
+    %th Sort
+    %th Actions
+  - @slides.each do |slide|
+    %tr
+      %td= slide.title
+      %td= slide.url
+      %td= slide.slide_file_name
+      %td= slide.sort
+      %td.action_links
+        = link_to "Edit", edit_admin_slide_path(slide)
+        = link_to "Delete", admin_slide_path(slide), :method => :delete, :confirm => "Are you sure?"
+
+= will_paginate @slides

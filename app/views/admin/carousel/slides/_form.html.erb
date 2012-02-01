@@ -1,0 +1,15 @@
+- content_for :right_column do
+  = render :partial => 'cms_admin/files/index'
+  
+= form.text_field :title
+= form.text_field :sort
+= form.file_field :slide, :label => "Slide Image"
+- if @slide.slide.url
+  .form_element
+    .label
+      %label Current Image
+    .value= image_tag @slide.slide.url(:edit_page)
+= form.text_field :url, :label => "Link to"
+= form.text_area :description
+
+= form.submit @slide.new_record?? 'Create Slide' : 'Update Slide'

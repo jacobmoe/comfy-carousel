@@ -1,0 +1,4 @@
+%h1 New Slide
+
+= cms_form_for @slide, :url => {:action => :create} do |form|
+  = render :partial => 'form', :object => form

@@ -1,0 +1,4 @@
+%h1 Editing Slide
+
+= cms_form_for @slide, :url => {:action => :update} do |form|
+  = render :partial => 'form', :object => form
