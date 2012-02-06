@@ -3,7 +3,7 @@ class CarouselGenerator < Rails::Generators::Base
   include Rails::Generators::Migration
   include Thor::Actions
 
-  source_root File.expand_path('../../..', __FILE__) 
+  source_root File.expand_path('../../../..', __FILE__) 
   
   def generate_migration
     destination   = File.expand_path('db/migrate/01_create_comfy_carousel.rb', self.destination_root)
