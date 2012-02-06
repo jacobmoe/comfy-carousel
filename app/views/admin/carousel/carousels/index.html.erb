@@ -6,6 +6,7 @@
   <% @carousels.each do |carousel| %>
     <li>
       <div class='item'>
+        <div class='icon'></div>
         <div class='action_links'>
           <%= link_to 'Edit', edit_admin_carousel_carousel_path(carousel) %>
           <%= link_to 'Delete', admin_carousel_carousel_path(carousel), :method => :delete, :confirm => 'Are you sure?' %>

@@ -10,10 +10,10 @@ module Comfy
       def generate_migration
         destination   = File.expand_path('db/migrate/01_create_comfy_carousel.rb', self.destination_root)
         migration_dir = File.dirname(destination)
-        destination   = self.class.migration_exists?(migration_dir, 'create_comfy_blog')
+        destination   = self.class.migration_exists?(migration_dir, 'create_comfy_carousel')
         
         if destination
-          puts "\e[0m\e[31mFound existing create_comfy_blog.rb migration. Remove it if you want to regenerate.\e[0m"
+          puts "\e[0m\e[31mFound existing create_comfy_carousel.rb migration. Remove it if you want to regenerate.\e[0m"
         else
           migration_template 'db/migrate/01_create_comfy_carousel.rb', 'db/migrate/create_comfy_carousel.rb'
         end
