@@ -1,53 +1,60 @@
-require 'test_helper'
+require File.expand_path('../../../test_helper', File.dirname(__FILE__))
 
-class Admin::SlidesControllerTest < ActionController::TestCase
+class Admin::Carousel::SlidesControllerTest < ActionController::TestCase
   
   def test_get_index
-    get :index
+    get :index, :carousel_id => carousel_carousels(:default)
     assert_response :success
     assert_template :index
     assert assigns(:slides)
   end
   
   def test_get_new
-    get :new
+    carousel = carousel_carousels(:default)
+    get :new, :carousel_id => carousel
     assert_response :success
     assert_template :new
     assert assigns(:slide)
+    assert_select "form[action='/admin/carousel/carousels/#{carousel.id}/slides']"
   end
   
   def test_get_edit
-    get :edit, :id => slides(:one)
+    carousel = carousel_carousels(:default)
+    slide = carousel_slides(:default)
+    
+    get :edit, :carousel_id => carousel, :id => slide
     assert_response :success
     assert_template :edit
     assert assigns(:slide)
+    assert_select "form[action='/admin/carousel/carousels/#{carousel.id}/slides/#{slide.id}']"
   end
   
   def test_get_edit_failure
-    get :edit, :id => 'invalid'
+    get :edit, :carousel_id => carousel_carousels(:default), :id => 'invalid'
     assert_response :redirect
     assert_redirected_to :action => :index
     assert_equal 'Slide not found', flash[:error]
   end
   
   def test_creation
-    assert_difference 'Slide.count' do
-      post :create, :slide => {
-        :description => "MyText",
-        :url => "MyString",
-        :title => "MySlideTitle",
-        :sort => 1
+    assert_difference 'Carousel::Slide.count' do
+      post :create, :carousel_id => carousel_carousels(:default), :slide => {
+        :label    => 'Test',
+        :url      => 'http://test.test',
+        :content  => 'Test Slide'
       }
       assert_response :redirect
       assert_redirected_to :action => :index
-      slide = Slide.last
-      assert_equal 'MyText', slide.description
+      assert_equal 'Slide created', flash[:notice]
+      
+      slide = Carousel::Slide.last
+      assert_equal 'Test', slide.label
     end
   end
   
   def test_creation_failure
-    assert_no_difference 'Slide.count' do
-      post :create, :slide => { }
+    assert_no_difference 'Carousel::Slide.count' do
+      post :create, :carousel_id => carousel_carousels(:default), :slide => { }
       assert_response :success
       assert_template :new
       assert_equal 'Failed to create Slide', flash[:error]
@@ -55,34 +62,38 @@ class Admin::SlidesControllerTest < ActionController::TestCase
   end
   
   def test_update
-    slide = slides(:one)
-    put :update, :id => slide, :slide => {
-      :description => "MyText",
-      :url => "MyString",
-      :title => "UpdatedTitle",
-      :sort => 1
+    carousel = carousel_carousels(:default)
+    slide = carousel_slides(:default)
+    
+    put :update, :carousel_id => carousel, :id => slide, :slide => {
+      :label => 'Updated'
     }
     assert_response :redirect
-    assert_redirected_to :action => :edit
+    assert_redirected_to :action => :edit, :id => slide
+    assert_equal 'Slide updated', flash[:notice]
+    
     slide.reload
-    assert_equal 'UpdatedTitle', slide.title
+    assert_equal 'Updated', slide.label
   end
   
   def test_update_failure
-    slide = slides(:one)
-    put :update, :id => slide, :slide => {
-      :description => ''
+    carousel = carousel_carousels(:default)
+    slide = carousel_slides(:default)
+    
+    put :update, :carousel_id => carousel, :id => slide, :slide => {
+      :label => ''
     }
     assert_response :success
     assert_template :edit
     assert_equal 'Failed to update Slide', flash[:error]
+    
     slide.reload
-    assert_not_equal '', slide.description
+    assert_not_equal '', slide.label
   end
   
   def test_destroy
-    assert_difference 'Slide.count', -1 do
-      delete :destroy, :id => slides(:one)
+    assert_difference 'Carousel::Slide.count', -1 do
+      delete :destroy, :carousel_id => carousel_carousels(:default), :id => carousel_slides(:default)
       assert_response :redirect
       assert_redirected_to :action => :index
       assert_equal 'Slide deleted', flash[:notice]

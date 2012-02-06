@@ -1,10 +1,11 @@
 class Admin::Carousel::SlidesController < Admin::Carousel::BaseController
   
+  before_filter :load_carousel
   before_filter :build_slide, :only => [:new, :create]
   before_filter :load_slide,  :only => [:edit, :update, :destroy]
   
   def index
-    @slides = Slide.order('id DESC').page(params[:page])
+    @slides = @carousel.slides
   end
 
   def new
@@ -42,11 +43,11 @@ class Admin::Carousel::SlidesController < Admin::Carousel::BaseController
 protected
 
   def build_slide
-    @slide = Slide.new(params[:slide])
+    @slide = @carousel.slides.new(params[:slide])
   end
 
   def load_slide
-    @slide = Slide.find(params[:id])
+    @slide = @carousel.slides.find(params[:id])
   rescue ActiveRecord::RecordNotFound
     flash[:error] = 'Slide not found'
     redirect_to :action => :index

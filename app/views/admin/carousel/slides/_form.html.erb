@@ -1,15 +1,13 @@
-- content_for :right_column do
-  = render :partial => 'cms_admin/files/index'
-  
-= form.text_field :title
-= form.text_field :sort
-= form.file_field :slide, :label => "Slide Image"
-- if @slide.slide.url
-  .form_element
-    .label
-      %label Current Image
-    .value= image_tag @slide.slide.url(:edit_page)
-= form.text_field :url, :label => "Link to"
-= form.text_area :description
+<%= form.text_field :label %>
+<%= form.text_area :content %>
+<%= form.text_field :url %>
+<%= form.file_field :file %>
 
-= form.submit @slide.new_record?? 'Create Slide' : 'Update Slide'
+<% if defined?(ComfortableMexicanSofa) %>
+  <% content_for :right_column do %>
+    <%= render :partial => 'cms_admin/files/index' %>
+  <% end %>
+  <%= cms_hook :carousel_slide, :locals => { :form => form } %>
+<% end %>
+
+<%= form.submit (@slide.new_record? ? 'Create Slide' : 'Update Slide') %>

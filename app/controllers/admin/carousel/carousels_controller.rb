@@ -43,13 +43,6 @@ class Admin::Carousel::CarouselsController < Admin::Carousel::BaseController
   
 protected
   
-  def load_carousel
-    @carousel = Carousel::Carousel.find(params[:id])
-  rescue ActiveRecord::RecordNotFound
-    flash[:error] = 'Carousel not found'
-    redirect_to :action => :index
-  end
-  
   def build_carousel
     @carousel = Carousel::Carousel.new(params[:carousel])
   end
