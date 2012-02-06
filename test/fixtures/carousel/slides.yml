@@ -1,0 +1,9 @@
+default:
+  carousel: default
+  label: Default Slide
+  content: Default Slide Content
+  url: http://test.test
+  file_file_name: sample.jpg
+  file_content_type: image/jpeg
+  file_file_size: 20099
+  position: 0

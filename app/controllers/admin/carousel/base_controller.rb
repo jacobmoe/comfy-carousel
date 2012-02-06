@@ -1,0 +1,3 @@
+class Admin::Carousel::BaseController < ComfyCarousel.config.admin_controller.to_s.constantize
+  # ...
+end

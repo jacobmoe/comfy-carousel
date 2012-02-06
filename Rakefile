@@ -10,7 +10,7 @@ begin
     gem.name        = 'comfy_carousel'
     gem.homepage    = 'http://github.com/comfy/comfy_carousel'
     gem.license     = 'MIT'
-    gem.summary     = 'ComfyCarousel is a carousel engine for Rails 3.1 apps (and ComfortableMexicanSofa)'
+    gem.summary     = 'ComfyCarousel is a carousel engine for Rails 3.1+ apps (and ComfortableMexicanSofa)'
     gem.description = ''
     gem.email       = 'oleg@twg.ca'
     gem.authors     = ['Oleg Khabarov', 'The Working Group Inc.']

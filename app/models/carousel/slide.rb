@@ -1,23 +1,8 @@
 class Carousel::Slide < ActiveRecord::Base
   
-  has_attached_file :slide, 
-    :styles => {
-                  :slide => "450x315#",
-                  :edit_page => "150x150>"
-               }
-    
-  attr_accessible :description,
-                  :url,
-                  :slide,
-                  :title,
-                  :sort
-                  
-  # -- Validations ----------------------------------------------------------
+  self.table_name = :carousel_slides
   
-  validates :description,
-            :url,
-            :title,
-            :sort,
-    :presence => true
+  # -- Relationships --------------------------------------------------------
+  belongs_to :carousel
   
 end
