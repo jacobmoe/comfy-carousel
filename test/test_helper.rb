@@ -6,6 +6,8 @@ class ActiveSupport::TestCase
   
   fixtures :all
   
+  include ActionDispatch::TestProcess
+  
   def setup
     reset_config
   end
