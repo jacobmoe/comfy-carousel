@@ -17,7 +17,7 @@ class ActiveSupport::TestCase
     ComfyCarousel.configure do |config|
       config.admin_route_prefix     = 'admin'
       config.admin_controller       = 'ApplicationController'
-      config.form_builder           = 'ComfyBlog::FormBuilder'
+      config.form_builder           = 'ComfyCarousel::FormBuilder'
     end
   end
 
