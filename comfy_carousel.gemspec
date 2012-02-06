@@ -24,16 +24,24 @@ Gem::Specification.new do |s|
     "app/assets/images/rails.png",
     "app/assets/javascripts/application.js",
     "app/assets/stylesheets/application.css",
+    "app/controllers/admin/carousel/base_controller.rb",
+    "app/controllers/admin/carousel/carousels_controller.rb",
     "app/controllers/admin/carousel/slides_controller.rb",
     "app/controllers/application_controller.rb",
-    "app/helpers/application_helper.rb",
+    "app/helpers/carousel/application_helper.rb",
     "app/models/.gitkeep",
+    "app/models/carousel/carousel.rb",
     "app/models/carousel/slide.rb",
+    "app/views/admin/carousel/carousels/_form.html.erb",
+    "app/views/admin/carousel/carousels/edit.html.erb",
+    "app/views/admin/carousel/carousels/index.html.erb",
+    "app/views/admin/carousel/carousels/new.html.erb",
     "app/views/admin/carousel/slides/_form.html.erb",
     "app/views/admin/carousel/slides/edit.html.erb",
     "app/views/admin/carousel/slides/index.html.erb",
     "app/views/admin/carousel/slides/new.html.erb",
     "app/views/layouts/application.html.erb",
+    "comfy_carousel.gemspec",
     "config.ru",
     "config/application.rb",
     "config/boot.rb",
@@ -51,19 +59,29 @@ Gem::Specification.new do |s|
     "config/locales/en.yml",
     "config/routes.rb",
     "db/migrate/01_create_comfy_carousel.rb",
-    "db/seeds.rb",
+    "db/schema.rb",
     "doc/README_FOR_APP",
-    "lib/assets/.gitkeep",
+    "lib/comfy_carousel.rb",
+    "lib/comfy_carousel/configuration.rb",
+    "lib/comfy_carousel/engine.rb",
+    "lib/comfy_carousel/form_builder.rb",
     "lib/tasks/.gitkeep",
     "log/.gitkeep",
     "script/rails",
     "test/fixtures/.gitkeep",
+    "test/fixtures/carousel/carousels.yml",
+    "test/fixtures/carousel/slides.yml",
+    "test/fixtures/files/image.jpg",
     "test/functional/.gitkeep",
+    "test/functional/admin/carousel/carousels_controller_test.rb",
     "test/functional/admin/carousel/slides_controller_test.rb",
     "test/integration/.gitkeep",
     "test/performance/browsing_test.rb",
     "test/test_helper.rb",
     "test/unit/.gitkeep",
+    "test/unit/carousel_test.rb",
+    "test/unit/configuration_test.rb",
+    "test/unit/slide_test.rb",
     "vendor/assets/javascripts/.gitkeep",
     "vendor/assets/stylesheets/.gitkeep",
     "vendor/plugins/.gitkeep"
@@ -72,7 +90,7 @@ Gem::Specification.new do |s|
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = "1.8.10"
-  s.summary = "ComfyCarousel is a carousel engine for Rails 3.1 apps (and ComfortableMexicanSofa)"
+  s.summary = "ComfyCarousel is a carousel engine for Rails 3.1+ apps (and ComfortableMexicanSofa)"
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
@@ -80,13 +98,16 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<rails>, [">= 3.1.0"])
       s.add_runtime_dependency(%q<jquery-rails>, [">= 1.0.0"])
+      s.add_runtime_dependency(%q<paperclip>, [">= 2.3.0"])
     else
       s.add_dependency(%q<rails>, [">= 3.1.0"])
       s.add_dependency(%q<jquery-rails>, [">= 1.0.0"])
+      s.add_dependency(%q<paperclip>, [">= 2.3.0"])
     end
   else
     s.add_dependency(%q<rails>, [">= 3.1.0"])
     s.add_dependency(%q<jquery-rails>, [">= 1.0.0"])
+    s.add_dependency(%q<paperclip>, [">= 2.3.0"])
   end
 end
 
