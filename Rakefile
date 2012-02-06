@@ -2,7 +2,7 @@ require File.expand_path('../config/application', __FILE__)
 require 'rubygems'
 require 'rake'
 
-ComfyBlog::Application.load_tasks
+ComfyCarousel::Application.load_tasks
 
 begin
   require 'jeweler'
