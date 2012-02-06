@@ -39,6 +39,13 @@ class Admin::Carousel::SlidesController < Admin::Carousel::BaseController
     flash[:notice] = 'Slide deleted'
     redirect_to :action => :index
   end
+  
+  def reorder
+    (params[:carousel_slide] || []).each_with_index do |id, index|
+      Carousel::Slide.where(:id => id).update_all(:position => index)
+    end
+    render :nothing => true
+  end
 
 protected
 

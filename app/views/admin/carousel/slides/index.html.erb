@@ -1,23 +1,22 @@
-= link_to span_tag('Create Slide'), new_admin_slide_path, :class => 'big button'
-%h1 Slides
+<%= link_to 'Add New Slide', new_admin_carousel_carousel_slide_path(@carousel), :class => 'big button' %>
 
-= will_paginate @slides
+<h1>Slides</h1>
 
-%table.formatted
-  %tr
-    %th.main Title
-    %th Link
-    %th Image
-    %th Sort
-    %th Actions
-  - @slides.each do |slide|
-    %tr
-      %td= slide.title
-      %td= slide.url
-      %td= slide.slide_file_name
-      %td= slide.sort
-      %td.action_links
-        = link_to "Edit", edit_admin_slide_path(slide)
-        = link_to "Delete", admin_slide_path(slide), :method => :delete, :confirm => "Are you sure?"
-
-= will_paginate @slides
+<ul class='list sortable'>
+  <% @slides.each do |slide| %>
+    <li id='carousel_slide_<%= slide.id %>'>
+      <div class='item'>
+        <div class='icon'>
+          <div class='dragger'><span>order</span></div>
+        </div>
+        <div class='action_links'>
+          <%= link_to 'Edit', edit_admin_carousel_carousel_slide_path(@carousel, slide) %>
+          <%= link_to 'Delete', admin_carousel_carousel_slide_path(@carousel, slide), :method => :delete, :confirm => 'Are you sure?' %>
+        </div>
+        <div class='label'>
+          <%= link_to slide.label, edit_admin_carousel_carousel_slide_path(@carousel, slide) %>
+        </div>
+      </div>
+    </li>
+  <% end %>
+</ul>

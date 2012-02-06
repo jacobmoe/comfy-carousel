@@ -99,5 +99,23 @@ class Admin::Carousel::SlidesControllerTest < ActionController::TestCase
       assert_equal 'Slide deleted', flash[:notice]
     end
   end
+  
+  def test_reorder
+    carousel = carousel_carousels(:default)
+    slide_one = carousel_slides(:default)
+    slide_two = carousel.slides.create!(
+      :label => 'test'
+    )
+    assert_equal 0, slide_one.position
+    assert_equal 1, slide_two.position
+    
+    post :reorder, :carousel_id => carousel, :carousel_slide => [slide_two.id, slide_one.id]
+    assert_response :success
+    slide_one.reload
+    slide_two.reload
+    
+    assert_equal 1, slide_one.position
+    assert_equal 0, slide_two.position
+  end
 
 end
