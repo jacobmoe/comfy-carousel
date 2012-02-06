@@ -60,6 +60,8 @@ Gem::Specification.new do |s|
     "lib/comfy_carousel/configuration.rb",
     "lib/comfy_carousel/engine.rb",
     "lib/comfy_carousel/form_builder.rb",
+    "lib/generators/README",
+    "lib/generators/carousel_generator.rb",
     "lib/tasks/.gitkeep",
     "log/.gitkeep",
     "script/rails",
