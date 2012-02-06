@@ -8,3 +8,4 @@
 Hey! Everything is almost done. Please don't forget to
   
   * run migrations -> `rake db:migrate`
+
