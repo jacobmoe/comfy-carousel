@@ -10,4 +10,4 @@
   <%= cms_hook :carousel_slide, :locals => { :form => form } %>
 <% end %>
 
-<%= form.submit (@slide.new_record? ? 'Create Slide' : 'Update Slide') %>
+<%= form.submit @slide.new_record?? 'Create Slide' : 'Update Slide' %>
