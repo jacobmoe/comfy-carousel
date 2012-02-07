@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "comfy_carousel"
-  s.version = "0.0.0"
+  s.version = "0.0.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Oleg Khabarov", "The Working Group Inc."]
@@ -13,11 +13,13 @@ Gem::Specification.new do |s|
   s.description = ""
   s.email = "oleg@twg.ca"
   s.extra_rdoc_files = [
+    "LICENSE",
     "README.md"
   ]
   s.files = [
     "Gemfile",
     "Gemfile.lock",
+    "LICENSE",
     "README.md",
     "Rakefile",
     "VERSION",
@@ -62,6 +64,7 @@ Gem::Specification.new do |s|
     "lib/generators/comfy/carousel/README",
     "lib/generators/comfy/carousel/carousel_generator.rb",
     "lib/tasks/.gitkeep",
+    "lib/tasks/comfy_carousel.rake",
     "log/.gitkeep",
     "script/rails",
     "test/fixtures/.gitkeep",
