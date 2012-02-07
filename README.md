@@ -16,7 +16,7 @@ Then from the Rails project's root run:
     
 You should be able to access `/admin/carousel/carousels` where you can add carousels and their slides.
 
-This gem comes bundled with [slidesjs](http://http://slidesjs.com/) that you can use via asset pipeline by adding this line to your `app/assets/javascripts/application.js`:
+This gem comes bundled with [slides.jquery.js](http://slidesjs.com/) that you can use via asset pipeline by adding this line to your `app/assets/javascripts/application.js`:
 
     //= require slides.jquery
     
@@ -32,5 +32,4 @@ Each slide will have following attributes: `label`, `content`, `url`, `file` (pa
 ---
 
 ComfyCarousel is released under the [MIT license](https://github.com/comfy/comfy-blog/raw/master/LICENSE) 
-
 Copyright 2012 Oleg Khabarov, [The Working Group Inc](http://www.twg.ca)
