@@ -1,6 +1,7 @@
 # ComfyCarousel
 
 This is a small engine that allows you to manage slideshows.
+test
 
 ## Installation
 
