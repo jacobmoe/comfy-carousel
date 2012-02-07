@@ -1,7 +1,6 @@
 # ComfyCarousel
 
 This is a small engine that allows you to manage slideshows.
-test
 
 ## Installation
 
@@ -32,5 +31,6 @@ Each slide will have following attributes: `label`, `content`, `url`, `file` (pa
 
 ---
 
-ComfyCarousel is rel_eased_eew under the [MIT license](https://github.com/comfy/comfy-blog/raw/master/LICENSE)
+ComfyCarousel is released under the [MIT license](https://github.com/comfy/comfy-blog/raw/master/LICENSE)
+
 Copyright 2012 Oleg Khabarov, [The Working Group Inc](http://www.twg.ca)
