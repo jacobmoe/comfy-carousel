@@ -1,4 +1,4 @@
-# ComfyCarousel
+# ComfyCarousel [![Build Status](https://secure.travis-ci.org/comfy/comfy-carousel.png)](http://travis-ci.org/comfy/comfy-carousel) [![Dependency Status](https://gemnasium.com/comfy/comfy-carousel.png)](https://gemnasium.com/comfy/comfy-carousel)
 
 This is a small engine that allows you to manage slideshows.
 
@@ -31,6 +31,6 @@ Each slide will have following attributes: `label`, `content`, `url`, `file` (pa
 
 ---
 
-ComfyCarousel is released under the [MIT license](https://github.com/comfy/comfy-blog/raw/master/LICENSE)
+ComfyCarousel is released under the [MIT license](https://github.com/comfy/comfy-carousel/raw/master/LICENSE)
 
 Copyright 2012 Oleg Khabarov, [The Working Group Inc](http://www.twg.ca)
