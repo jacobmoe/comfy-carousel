@@ -4,6 +4,7 @@ class CreateComfyCarousel < ActiveRecord::Migration
     create_table :carousel_carousels do |t|
       t.string :label,      :null => false
       t.string :identifier, :null => false
+      t.string :dimensions
       t.timestamps
     end
     add_index :carousel_carousels, :identifier

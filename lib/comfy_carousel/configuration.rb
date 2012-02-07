@@ -11,11 +11,15 @@ module ComfyCarousel
     # Form builder
     attr_accessor :form_builder
     
+    # Paperclip upload settings for photos
+    attr_accessor :upload_options
+    
     # Configuration defaults
     def initialize
-      @admin_route_prefix     = 'admin'
-      @admin_controller       = 'ApplicationController'
-      @form_builder           = 'ComfyCarousel::FormBuilder'
+      @admin_route_prefix = 'admin'
+      @admin_controller   = 'ApplicationController'
+      @form_builder       = 'ComfyCarousel::FormBuilder'
+      @upload_options     = { }
     end
     
   end

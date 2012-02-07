@@ -1,8 +1,20 @@
 class Carousel::Slide < ActiveRecord::Base
   
+  IMAGE_MIMETYPES = %w(gif jpeg pjpeg png svg+xml tiff).collect{|subtype| "image/#{subtype}"}
+  
   self.table_name = :carousel_slides
   
-  has_attached_file :file
+  upload_options = (ComfyCarousel.config.upload_options || {}).merge(
+    :styles => lambda { |slide|
+      if c = slide.instance.carousel && dimentions = c.try(:dimentions)
+        { :original => dimentions }
+      else
+        { }
+      end
+    }
+  )
+  has_attached_file :file, upload_options
+  before_post_process :is_image?
   
   # -- Relationships --------------------------------------------------------
   belongs_to :carousel
@@ -16,6 +28,11 @@ class Carousel::Slide < ActiveRecord::Base
     
   # -- Scopes ---------------------------------------------------------------
   default_scope order('carousel_slides.position')
+  
+  # -- Instance Methods -----------------------------------------------------
+  def is_image?
+    IMAGE_MIMETYPES.include?(file_content_type)
+  end
   
 protected
   

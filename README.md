@@ -22,6 +22,8 @@ This gem comes bundled with [slides.jquery.js](http://slidesjs.com/) that you ca
     
 ## Usage
 
+You'll notice that carousels have `dimensions` field. You can force-resize uploaded images via ImageMagic values. For example: `300x200#` will resize any image to be 300px wide and 200px in height. Also it will crop image if necessary. 
+
 There's nothing on the front-end really. You have access to `Carousel::Carousel` objects that in turn can be used to access their slides. Like so:
 
     @carousel = Carousel::Carousel.find_by_identifier('my_carousel')

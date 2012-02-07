@@ -15,9 +15,10 @@ class ActiveSupport::TestCase
   # resetting default configuration
   def reset_config
     ComfyCarousel.configure do |config|
-      config.admin_route_prefix     = 'admin'
-      config.admin_controller       = 'ApplicationController'
-      config.form_builder           = 'ComfyCarousel::FormBuilder'
+      config.admin_route_prefix = 'admin'
+      config.admin_controller   = 'ApplicationController'
+      config.form_builder       = 'ComfyCarousel::FormBuilder'
+      config.upload_options     = { }
     end
   end
 

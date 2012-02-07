@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(:version => 1) do
   create_table "carousel_carousels", :force => true do |t|
     t.string   "label",      :null => false
     t.string   "identifier", :null => false
+    t.string   "dimensions"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

@@ -50,7 +50,8 @@ class Admin::Carousel::SlidesController < Admin::Carousel::BaseController
 protected
 
   def build_slide
-    @slide = @carousel.slides.new(params[:slide])
+    # Yes, this is terrible. Thank paperclip for that.
+    @slide = Carousel::Slide.new({:carousel => @carousel}.merge(params[:slide] || {}))
   end
 
   def load_slide
