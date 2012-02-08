@@ -6,8 +6,8 @@ class Carousel::Slide < ActiveRecord::Base
   
   upload_options = (ComfyCarousel.config.upload_options || {}).merge(
     :styles => lambda { |slide|
-      if c = slide.instance.carousel && dimentions = c.try(:dimentions)
-        { :original => dimentions }
+      if (c = slide.instance.carousel) && c.dimensions.present?
+        { :original => c.dimensions }
       else
         { }
       end
