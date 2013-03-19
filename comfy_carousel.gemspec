@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Oleg Khabarov", "The Working Group Inc."]
-  s.date = "2012-02-08"
+  s.date = "2013-03-19"
   s.description = ""
   s.email = "oleg@twg.ca"
   s.extra_rdoc_files = [
@@ -29,19 +29,18 @@ Gem::Specification.new do |s|
     "app/controllers/admin/carousel/carousels_controller.rb",
     "app/controllers/admin/carousel/slides_controller.rb",
     "app/controllers/application_controller.rb",
-    "app/helpers/carousel/application_helper.rb",
     "app/models/.gitkeep",
     "app/models/carousel/carousel.rb",
     "app/models/carousel/slide.rb",
-    "app/views/admin/carousel/_navigation.html.erb",
-    "app/views/admin/carousel/carousels/_form.html.erb",
-    "app/views/admin/carousel/carousels/edit.html.erb",
-    "app/views/admin/carousel/carousels/index.html.erb",
-    "app/views/admin/carousel/carousels/new.html.erb",
-    "app/views/admin/carousel/slides/_form.html.erb",
-    "app/views/admin/carousel/slides/edit.html.erb",
-    "app/views/admin/carousel/slides/index.html.erb",
-    "app/views/admin/carousel/slides/new.html.erb",
+    "app/views/admin/carousel/_navigation.html.haml",
+    "app/views/admin/carousel/carousels/_form.html.haml",
+    "app/views/admin/carousel/carousels/edit.html.haml",
+    "app/views/admin/carousel/carousels/index.html.haml",
+    "app/views/admin/carousel/carousels/new.html.haml",
+    "app/views/admin/carousel/slides/_form.html.haml",
+    "app/views/admin/carousel/slides/edit.html.haml",
+    "app/views/admin/carousel/slides/index.html.haml",
+    "app/views/admin/carousel/slides/new.html.haml",
     "app/views/layouts/application.html.erb",
     "comfy_carousel.gemspec",
     "config.ru",
@@ -88,25 +87,19 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/comfy/comfy_carousel"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.10"
+  s.rubygems_version = "1.8.24"
   s.summary = "ComfyCarousel is a carousel engine for Rails 3.1+ apps (and ComfortableMexicanSofa)"
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<rails>, [">= 3.1.0"])
-      s.add_runtime_dependency(%q<jquery-rails>, [">= 1.0.0"])
-      s.add_runtime_dependency(%q<paperclip>, [">= 2.3.0"])
+      s.add_runtime_dependency(%q<comfortable_mexican_sofa>, ["~> 1.7.1"])
     else
-      s.add_dependency(%q<rails>, [">= 3.1.0"])
-      s.add_dependency(%q<jquery-rails>, [">= 1.0.0"])
-      s.add_dependency(%q<paperclip>, [">= 2.3.0"])
+      s.add_dependency(%q<comfortable_mexican_sofa>, ["~> 1.7.1"])
     end
   else
-    s.add_dependency(%q<rails>, [">= 3.1.0"])
-    s.add_dependency(%q<jquery-rails>, [">= 1.0.0"])
-    s.add_dependency(%q<paperclip>, [">= 2.3.0"])
+    s.add_dependency(%q<comfortable_mexican_sofa>, ["~> 1.7.1"])
   end
 end
 
