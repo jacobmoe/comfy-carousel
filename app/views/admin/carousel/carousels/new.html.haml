@@ -1,0 +1,5 @@
+.page-header
+  %h2 New Carousel
+
+= comfy_form_for @carousel, :as => :carousel, :url => {:action => :create} do |form|
+  = render :partial => form

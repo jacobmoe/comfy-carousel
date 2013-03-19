@@ -1,0 +1,15 @@
+= form.text_field :label
+= form.text_area :content, :class => 'short'
+= form.text_field :url
+
+- if @slide.file? && !@slide.new_record?
+  = form.element 'Current Image' do
+    = image_tag @slide.file.url
+= form.file_field :file
+
+- content_for :right_column do
+  = render :partial => 'cms_admin/files/index'
+= cms_hook :carousel_slide, :locals => { :form => form }
+
+.form-actions
+  = form.submit @slide.new_record?? 'Create Slide' : 'Update Slide', :class => 'btn btn-primary'

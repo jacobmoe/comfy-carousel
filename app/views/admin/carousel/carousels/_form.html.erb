@@ -1,5 +1,0 @@
-<%= form.text_field :label, :id => (@carousel.new_record?? 'slugify' : nil) %>
-<%= form.text_field :identifier, :id => 'slug' %>
-<%= form.text_field :dimensions %>
-
-<%= form.submit @carousel.new_record?? 'Create Carousel' : 'Update Carousel' %>

@@ -4,7 +4,7 @@ class Admin::Carousel::CarouselsController < Admin::Carousel::BaseController
   before_filter :load_carousel,   :only => [:edit, :update, :destroy]
   
   def index
-    @carousels = Carousel::Carousel.all
+    @carousels = ::Carousel::Carousel.all
   end
   
   def new
@@ -17,7 +17,7 @@ class Admin::Carousel::CarouselsController < Admin::Carousel::BaseController
   
   def create
     @carousel.save!
-    flash[:notice] = 'Carousel created'
+    flash[:success] = 'Carousel created'
     redirect_to new_admin_carousel_carousel_slide_path(@carousel)
   
   rescue ActiveRecord::RecordInvalid
@@ -27,7 +27,7 @@ class Admin::Carousel::CarouselsController < Admin::Carousel::BaseController
   
   def update
     @carousel.update_attributes!(params[:carousel])
-    flash[:notice] = 'Carousel updated'
+    flash[:success] = 'Carousel updated'
     redirect_to :action => :edit, :id => @carousel
     
   rescue ActiveRecord::RecordInvalid
@@ -37,14 +37,14 @@ class Admin::Carousel::CarouselsController < Admin::Carousel::BaseController
   
   def destroy
     @carousel.destroy
-    flash[:notice] = 'Carousel removed'
+    flash[:success] = 'Carousel removed'
     redirect_to :action => :index
   end
   
 protected
   
   def build_carousel
-    @carousel = Carousel::Carousel.new(params[:carousel])
+    @carousel = ::Carousel::Carousel.new(params[:carousel])
   end
   
 end

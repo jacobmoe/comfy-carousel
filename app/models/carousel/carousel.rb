@@ -1,6 +1,8 @@
 class Carousel::Carousel < ActiveRecord::Base
   
   self.table_name = :carousel_carousels
+
+  attr_accessible :label, :identifier, :dimensions
   
   # -- Relationships --------------------------------------------------------
   has_many :slides,

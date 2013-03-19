@@ -1,0 +1,5 @@
+.page-header
+  %h2 Editing Slide
+
+= comfy_form_for @slide, :as => :slide, :url => {:action => :update} do |form|
+  = render :partial => form

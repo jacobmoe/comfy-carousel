@@ -15,6 +15,8 @@ class Carousel::Slide < ActiveRecord::Base
   )
   has_attached_file :file, upload_options
   before_post_process :is_image?
+
+  attr_accessible :carousel, :label, :file, :content, :url
   
   # -- Relationships --------------------------------------------------------
   belongs_to :carousel
