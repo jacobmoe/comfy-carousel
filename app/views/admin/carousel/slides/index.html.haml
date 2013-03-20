@@ -12,6 +12,6 @@
             %span order
         .action_links.pull-right
           = link_to 'Edit', edit_admin_carousel_carousel_slide_path(@carousel, slide), :class => 'btn'
-          = link_to 'Delete', admin_carousel_carousel_slide_path(@carousel, slide), :method => :delete, :confirm => 'Are you sure?', :class => 'btn'
+          = link_to 'Delete', admin_carousel_carousel_slide_path(@carousel, slide), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-danger'
         .label.pull-left
           = link_to slide.label, edit_admin_carousel_carousel_slide_path(@carousel, slide)
