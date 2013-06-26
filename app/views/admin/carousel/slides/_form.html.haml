@@ -8,7 +8,7 @@
 = form.file_field :file
 
 - content_for :right_column do
-  = render :partial => 'cms_admin/files/index'
+  = render :partial => 'cms_admin/files/index' if @site
 = cms_hook :carousel_slide, :locals => { :form => form }
 
 .form-actions

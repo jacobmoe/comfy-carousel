@@ -39,7 +39,7 @@ class Admin::Carousel::CarouselsControllerTest < ActionController::TestCase
       }
       assert_response :redirect
       assert_redirected_to new_admin_carousel_carousel_slide_path(assigns(:carousel))
-      assert_equal 'Carousel created', flash[:notice]
+      assert_equal 'Carousel created', flash[:success]
     end
   end
   
@@ -60,7 +60,7 @@ class Admin::Carousel::CarouselsControllerTest < ActionController::TestCase
     }
     assert_response :redirect
     assert_redirected_to :action => :edit, :id => carousel
-    assert_equal 'Carousel updated', flash[:notice]
+    assert_equal 'Carousel updated', flash[:success]
     
     carousel.reload
     assert_equal 'Updated', carousel.label
@@ -85,7 +85,7 @@ class Admin::Carousel::CarouselsControllerTest < ActionController::TestCase
       delete :destroy, :id => carousel_carousels(:default)
       assert_response :redirect
       assert_redirected_to :action => :index
-      assert_equal 'Carousel removed', flash[:notice]
+      assert_equal 'Carousel removed', flash[:success]
     end
   end
   
