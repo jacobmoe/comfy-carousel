@@ -71,7 +71,6 @@ Gem::Specification.new do |s|
     "db/cms_fixtures/sample-site/snippets/default/_default.yml",
     "db/cms_fixtures/sample-site/snippets/default/content.html",
     "db/migrate/01_create_comfy_carousel.rb",
-    "db/migrate/20130626152830_create_cms.rb",
     "db/schema.rb",
     "doc/README_FOR_APP",
     "lib/comfy_carousel.rb",
@@ -112,11 +111,14 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<rails>, ["= 3.2.13"])
       s.add_runtime_dependency(%q<comfortable_mexican_sofa>, ["= 1.8.1"])
     else
+      s.add_dependency(%q<rails>, ["= 3.2.13"])
       s.add_dependency(%q<comfortable_mexican_sofa>, ["= 1.8.1"])
     end
   else
+    s.add_dependency(%q<rails>, ["= 3.2.13"])
     s.add_dependency(%q<comfortable_mexican_sofa>, ["= 1.8.1"])
   end
 end
