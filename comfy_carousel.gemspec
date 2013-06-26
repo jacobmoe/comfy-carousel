@@ -51,7 +51,6 @@ Gem::Specification.new do |s|
     "config/environment.rb",
     "config/environments/development.rb",
     "config/environments/test.rb",
-    "config/initializers/comfortable_mexican_sofa.rb",
     "config/initializers/comfy_carousel.rb",
     "config/locales/en.yml",
     "config/routes.rb",
