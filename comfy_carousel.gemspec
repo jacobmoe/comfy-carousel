@@ -22,8 +22,10 @@ Gem::Specification.new do |s|
     "README.md",
     "Rakefile",
     "VERSION",
+    "app/assets/javascripts/comfortable_mexican_sofa/admin/application.js",
     "app/assets/javascripts/jquery.slides.js",
     "app/assets/javascripts/jquery.slides.min.js",
+    "app/assets/stylesheets/comfortable_mexican_sofa/admin/application.css",
     "app/controllers/admin/carousel/base_controller.rb",
     "app/controllers/admin/carousel/carousels_controller.rb",
     "app/controllers/admin/carousel/slides_controller.rb",
@@ -49,10 +51,27 @@ Gem::Specification.new do |s|
     "config/environment.rb",
     "config/environments/development.rb",
     "config/environments/test.rb",
+    "config/initializers/comfortable_mexican_sofa.rb",
     "config/initializers/comfy_carousel.rb",
     "config/locales/en.yml",
     "config/routes.rb",
+    "db/cms_fixtures/sample-site/layouts/default/_default.yml",
+    "db/cms_fixtures/sample-site/layouts/default/content.html",
+    "db/cms_fixtures/sample-site/layouts/default/css.css",
+    "db/cms_fixtures/sample-site/layouts/default/js.js",
+    "db/cms_fixtures/sample-site/layouts/default/nested/_nested.yml",
+    "db/cms_fixtures/sample-site/layouts/default/nested/content.html",
+    "db/cms_fixtures/sample-site/layouts/default/nested/css.css",
+    "db/cms_fixtures/sample-site/layouts/default/nested/js.js",
+    "db/cms_fixtures/sample-site/pages/index/_index.yml",
+    "db/cms_fixtures/sample-site/pages/index/child/_child.yml",
+    "db/cms_fixtures/sample-site/pages/index/child/left.html",
+    "db/cms_fixtures/sample-site/pages/index/child/right.html",
+    "db/cms_fixtures/sample-site/pages/index/content.html",
+    "db/cms_fixtures/sample-site/snippets/default/_default.yml",
+    "db/cms_fixtures/sample-site/snippets/default/content.html",
     "db/migrate/01_create_comfy_carousel.rb",
+    "db/migrate/20130626152830_create_cms.rb",
     "db/schema.rb",
     "doc/README_FOR_APP",
     "lib/comfy_carousel.rb",
@@ -93,12 +112,12 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<comfortable_mexican_sofa>, ["~> 1.8.1"])
+      s.add_runtime_dependency(%q<comfortable_mexican_sofa>, ["= 1.8.1"])
     else
-      s.add_dependency(%q<comfortable_mexican_sofa>, ["~> 1.8.1"])
+      s.add_dependency(%q<comfortable_mexican_sofa>, ["= 1.8.1"])
     end
   else
-    s.add_dependency(%q<comfortable_mexican_sofa>, ["~> 1.8.1"])
+    s.add_dependency(%q<comfortable_mexican_sofa>, ["= 1.8.1"])
   end
 end
 
