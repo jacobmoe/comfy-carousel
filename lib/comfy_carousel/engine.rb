@@ -7,7 +7,6 @@ module ComfyCarousel
       if defined?(ComfortableMexicanSofa)
         # Applying configuraion
         ComfyCarousel.configure do |conf|
-          conf.admin_route_prefix = 'admin' #ComfortableMexicanSofa.config.admin_route_prefix
           conf.admin_controller   = 'CmsAdmin::BaseController'
           conf.form_builder       = 'ComfortableMexicanSofa::FormBuilder'
           conf.upload_options     = ComfortableMexicanSofa.config.upload_file_options
