@@ -1,4 +1,4 @@
-class Admin::Carousel::CarouselsController < Admin::Carousel::BaseController
+class CmsAdmin::Carousel::CarouselsController < CmsAdmin::Carousel::BaseController
   
   before_filter :build_carousel,  :only => [:new, :create]
   before_filter :load_carousel,   :only => [:edit, :update, :destroy]
@@ -18,7 +18,7 @@ class Admin::Carousel::CarouselsController < Admin::Carousel::BaseController
   def create
     @carousel.save!
     flash[:success] = 'Carousel created'
-    redirect_to new_admin_carousel_carousel_slide_path(@carousel)
+    redirect_to new_cms_admin_carousel_carousel_slide_path(@carousel)
   
   rescue ActiveRecord::RecordInvalid
     flash.now[:error] = 'Failed to create Carousel'

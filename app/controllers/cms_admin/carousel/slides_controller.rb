@@ -1,4 +1,4 @@
-class Admin::Carousel::SlidesController < Admin::Carousel::BaseController
+class CmsAdmin::Carousel::SlidesController < CmsAdmin::Carousel::BaseController
   
   before_filter :load_carousel
   before_filter :build_slide, :only => [:new, :create]

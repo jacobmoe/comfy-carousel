@@ -1,6 +1,6 @@
 require File.expand_path('../../../test_helper', File.dirname(__FILE__))
 
-class Admin::Carousel::CarouselsControllerTest < ActionController::TestCase
+class CmsAdmin::Carousel::CarouselsControllerTest < ActionController::TestCase
   
   def test_get_index
     get :index
@@ -13,7 +13,7 @@ class Admin::Carousel::CarouselsControllerTest < ActionController::TestCase
     get :new
     assert_response :success
     assert_template :new
-    assert_select "form[action='/admin/carousel/carousels']"
+    assert_select "form[action='/cms-admin/carousel/carousels']"
   end
   
   def test_get_edit
@@ -21,7 +21,7 @@ class Admin::Carousel::CarouselsControllerTest < ActionController::TestCase
     get :edit, :id => carousel
     assert_response :success
     assert_template :edit
-    assert_select "form[action='/admin/carousel/carousels/#{carousel.id}']"
+    assert_select "form[action='/cms-admin/carousel/carousels/#{carousel.id}']"
   end
   
   def test_get_edit_failure
@@ -38,7 +38,7 @@ class Admin::Carousel::CarouselsControllerTest < ActionController::TestCase
         :identifier => 'test'
       }
       assert_response :redirect
-      assert_redirected_to new_admin_carousel_carousel_slide_path(assigns(:carousel))
+      assert_redirected_to new_cms_admin_carousel_carousel_slide_path(assigns(:carousel))
       assert_equal 'Carousel created', flash[:success]
     end
   end
