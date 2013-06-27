@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Oleg Khabarov", "The Working Group Inc."]
-  s.date = "2013-06-26"
+  s.date = "2013-06-27"
   s.description = ""
   s.email = "oleg@twg.ca"
   s.extra_rdoc_files = [
@@ -26,22 +26,22 @@ Gem::Specification.new do |s|
     "app/assets/javascripts/jquery.slides.js",
     "app/assets/javascripts/jquery.slides.min.js",
     "app/assets/stylesheets/comfortable_mexican_sofa/admin/application.css",
-    "app/controllers/admin/carousel/base_controller.rb",
-    "app/controllers/admin/carousel/carousels_controller.rb",
-    "app/controllers/admin/carousel/slides_controller.rb",
     "app/controllers/application_controller.rb",
+    "app/controllers/cms_admin/carousel/base_controller.rb",
+    "app/controllers/cms_admin/carousel/carousels_controller.rb",
+    "app/controllers/cms_admin/carousel/slides_controller.rb",
     "app/models/.gitkeep",
     "app/models/carousel/carousel.rb",
     "app/models/carousel/slide.rb",
-    "app/views/admin/carousel/_navigation.html.haml",
-    "app/views/admin/carousel/carousels/_form.html.haml",
-    "app/views/admin/carousel/carousels/edit.html.haml",
-    "app/views/admin/carousel/carousels/index.html.haml",
-    "app/views/admin/carousel/carousels/new.html.haml",
-    "app/views/admin/carousel/slides/_form.html.haml",
-    "app/views/admin/carousel/slides/edit.html.haml",
-    "app/views/admin/carousel/slides/index.html.haml",
-    "app/views/admin/carousel/slides/new.html.haml",
+    "app/views/cms_admin/carousel/_navigation.html.haml",
+    "app/views/cms_admin/carousel/carousels/_form.html.haml",
+    "app/views/cms_admin/carousel/carousels/edit.html.haml",
+    "app/views/cms_admin/carousel/carousels/index.html.haml",
+    "app/views/cms_admin/carousel/carousels/new.html.haml",
+    "app/views/cms_admin/carousel/slides/_form.html.haml",
+    "app/views/cms_admin/carousel/slides/edit.html.haml",
+    "app/views/cms_admin/carousel/slides/index.html.haml",
+    "app/views/cms_admin/carousel/slides/new.html.haml",
     "app/views/layouts/application.html.erb",
     "comfy_carousel.gemspec",
     "config.ru",
@@ -76,6 +76,7 @@ Gem::Specification.new do |s|
     "lib/comfy_carousel/configuration.rb",
     "lib/comfy_carousel/engine.rb",
     "lib/comfy_carousel/form_builder.rb",
+    "lib/comfy_carousel/routing.rb",
     "lib/generators/comfy/carousel/README",
     "lib/generators/comfy/carousel/carousel_generator.rb",
     "lib/tasks/.gitkeep",
@@ -87,8 +88,8 @@ Gem::Specification.new do |s|
     "test/fixtures/carousel/slides.yml",
     "test/fixtures/files/image.jpg",
     "test/functional/.gitkeep",
-    "test/functional/admin/carousel/carousels_controller_test.rb",
-    "test/functional/admin/carousel/slides_controller_test.rb",
+    "test/functional/cms_admin/carousel/carousels_controller_test.rb",
+    "test/functional/cms_admin/carousel/slides_controller_test.rb",
     "test/integration/.gitkeep",
     "test/performance/browsing_test.rb",
     "test/test_helper.rb",
